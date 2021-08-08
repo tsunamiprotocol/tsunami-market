@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    </button>
+    <span>Tsunami</span>
+    &nbsp;
+    <i></i>
+    <span class="example-spacer"></span>
+    <span class="nav-tool-items">
+        <a href="https://docs.google.com/document/d/1X7An-lX1ug2LCjy9F-vofwbx9OHzK9LIp8j3jW3e8Fk/edit"
+            style="color: burlywood;" target="_blank">Docs</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-label style="color: #000;">Select Chain: </mat-label>&nbsp;
+        <mat-form-field appearance="fill">
+            <mat-select [(value)]="selectedValue">
+                <mat-option value="1">Tequilla</mat-option>
+                <mat-option value="2">Bombay</mat-option>
+                <mat-option value="3">Mainnet</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button type="button" class="btn btn-1 m-5">Connect</button>
+    </span>
+</mat-toolbar>

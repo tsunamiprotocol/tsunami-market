@@ -1,0 +1,47 @@
+<section class="section">
+    <div class="container">
+        <div class="columns is-multiline">
+
+            <!-- loop over our available nfts and give them each a card -->
+
+            <div class="column is-4" *ngFor="let dataset of datasets?.slice(1,50)">
+
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <mat-card-title>{{dataset?.dataTokenInfo?.name}}</mat-card-title>
+                        <mat-card-subtitle>{{dataset?.dataTokenInfo?.symbol}}</mat-card-subtitle>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <p style="font-size: 1em; margin-left: 1vw;">
+                            Total available: {{dataset?.dataTokenInfo?.cap}}
+                        </p>
+                    </mat-card-content>
+                    <mat-card-content>
+                        <p style="font-size: 1em; margin-left: 1vw;">
+                            Created: {{dataset?.created | date}}
+                        </p>
+                    </mat-card-content>
+                    <mat-card-content>
+                        <p style="font-size: 1em; margin-left: 1vw;">
+                            Author: {{dataset?.service[0]?.attributes?.main?.author}}
+                        </p>
+                    </mat-card-content>
+                    <mat-card-content>
+                        <p style="font-size: 1em; margin-left: 1vw;">
+                            Price: {{dataset?.price?.value * ethPrice | number: '1.2-3'}}
+                            Datatoken: {{dataset?.price?.datatoken}}
+                        </p>
+                    </mat-card-content>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <mat-card-actions>
+                        <button mat-stroked-button>Buy</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+
+        </div>
+    </div>
+</section>
