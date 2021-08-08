@@ -22,7 +22,7 @@ export class DatasetComponent implements OnInit {
 
     this.httpClient.get("assets/chainLinkInterfaceABI.json").subscribe((data: any) => {
       this._aggregatorV3InterfaceABI = data.aggregatorV3InterfaceABI;
-      this.getChainLinkData("0x8DefC4eEC0dd1B6f73e5ba10466C465c1346536E", 'E');
+      this.getChainLinkData("0x9326BFA02ADD2366b30bacB125260Af641031331", 'E');
     })
   }
 

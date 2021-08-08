@@ -28,9 +28,13 @@
                         </p>
                     </mat-card-content>
                     <mat-card-content>
-                        <p style="font-size: 1em; margin-left: 1vw;">
-                            Price: {{dataset?.price?.value * ethPrice | number: '1.2-3'}}
+                        <p *ngIf="dataset?.price?.value!=0 && dataset?.price?.datatoken!=0" style="font-size: 1em; margin-left: 1vw;">
+                            Price: {{dataset?.price?.value * ethPrice | number: '1.2-3'}} UST
                             Datatoken: {{dataset?.price?.datatoken}}
+                        </p>
+                        <p *ngIf="dataset?.price?.value==0 || dataset?.price?.datatoken==0" style="font-size: 1em; margin-left: 1vw;">
+                            Price: N/A
+                            Datatoken: N/A
                         </p>
                     </mat-card-content>
 
