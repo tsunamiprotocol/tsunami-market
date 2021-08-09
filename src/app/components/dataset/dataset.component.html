@@ -4,11 +4,11 @@
 
             <!-- loop over our available nfts and give them each a card -->
 
-            <div class="column is-4" *ngFor="let dataset of datasets?.slice(1,50)">
+            <div class="column is-4" *ngFor="let dataset of datasets?.slice(100,200)">
 
                 <mat-card class="example-card">
                     <mat-card-header>
-                        <mat-card-title>{{dataset?.dataTokenInfo?.name}}</mat-card-title>
+                        <mat-card-title>{{dataset?.service[0]?.attributes?.main?.name}}</mat-card-title>
                         <mat-card-subtitle>{{dataset?.dataTokenInfo?.symbol}}</mat-card-subtitle>
                     </mat-card-header>
 
@@ -34,14 +34,15 @@
                         </p>
                         <p *ngIf="dataset?.price?.value==0 || dataset?.price?.datatoken==0" style="font-size: 1em; margin-left: 1vw;">
                             Price: N/A
-                            Datatoken: N/A
+                          
                         </p>
                     </mat-card-content>
 
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                     <mat-card-actions>
-                        <button mat-stroked-button>Buy</button>
+                        <button *ngIf="dataset?.price?.value!=0 && dataset?.price?.datatoken!=0" mat-stroked-button (click)="buyDataSet(dataset?.price?.value * ethPrice)">Buy</button>
+                        <button disabled *ngIf="dataset?.price?.value==0 || dataset?.price?.datatoken==0" mat-stroked-button >Sold Out</button>
                     </mat-card-actions>
                 </mat-card>
             </div>

@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DatasetComponent } from './components/dataset/dataset.component';
 import { HeaderComponent } from './components/header/header.component';
+import { BuyComponent } from './components/buy/buy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DatasetComponent,
-    HeaderComponent
+    HeaderComponent,
+    BuyComponent
   ],
   imports: [
     BrowserModule,

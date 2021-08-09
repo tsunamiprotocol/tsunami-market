@@ -1,0 +1,19 @@
+.center {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  
+  .center h1{
+    align-self: center;
+    font-size: larger;
+  }
+
+  .jumbotron{
+    background-size:100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
+
